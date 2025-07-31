@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 
 import 'virtual:uno.css'
 
-import '@renderer/assets/css/global.css'
+import '@renderer/assets/css/global.less'
 
 import App from './App'
 

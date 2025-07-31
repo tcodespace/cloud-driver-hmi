@@ -3,6 +3,7 @@ import { BrowserWindow } from 'electron/main'
 import type { App } from 'electron/main'
 
 export function handleReadyToShow(mainWindow: BrowserWindow): void {
+  mainWindow.webContents.setZoomFactor(1)
   mainWindow.show()
 }
 

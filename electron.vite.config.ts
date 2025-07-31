@@ -1,6 +1,8 @@
 import { resolve } from 'path'
 import { defineConfig, externalizeDepsPlugin } from 'electron-vite'
 import react from '@vitejs/plugin-react'
+import UnoCSS from 'unocss/vite'
+import { vitePluginForArco } from '@arco-plugins/vite-react'
 
 export default defineConfig({
   main: {
@@ -15,6 +17,12 @@ export default defineConfig({
         '@renderer': resolve('src/renderer/src')
       }
     },
-    plugins: [react()]
+    plugins: [
+      react(),
+      UnoCSS(),
+      vitePluginForArco({
+        style: true
+      })
+    ]
   }
 })

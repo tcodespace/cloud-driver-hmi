@@ -1,9 +1,9 @@
-import { createBrowserRouter, Navigate } from 'react-router'
+import { createHashRouter, Navigate } from 'react-router'
 
 import Layout from '@renderer/layout/Layout'
 import { lazy } from 'react'
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: '/',
     Component: Layout,

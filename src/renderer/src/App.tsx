@@ -1,12 +1,15 @@
-import { memo } from 'react'
-import router from '@renderer/router'
-
+import { memo, Suspense } from 'react'
 import { RouterProvider } from 'react-router'
+
+import router from '@renderer/router'
+import { Loading } from '@renderer/components'
 
 const App = memo(() => {
   return (
     <div className="h-full w-full">
-      <RouterProvider router={router} />
+      <Suspense fallback={<Loading />}>
+        <RouterProvider router={router} />
+      </Suspense>
     </div>
   )
 })

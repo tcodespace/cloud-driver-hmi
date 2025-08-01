@@ -1,6 +1,6 @@
 import { memo } from 'react'
 
-import { Mosaic } from '@renderer/components/mosaic'
+import { Mosaic } from '@renderer/components'
 
 const Home = memo(() => {
   return (

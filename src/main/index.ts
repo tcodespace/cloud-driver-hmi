@@ -26,7 +26,7 @@ const defaultWindowOptions = {
 function createWindow(): void {
   const mainWindow = new BrowserWindow(defaultWindowOptions)
 
-  mainWindow.on(APP_EVENT.READY_TO_SHOW, handleReadyToShow.bind(null, mainWindow))
+  mainWindow.on(APP_EVENT.READY_TO_SHOW, handleReadyToShow.bind(undefined, mainWindow))
 
   if (is.dev && process.env[ELECTRON_RENDERER_URL]) {
     mainWindow.loadURL(process.env[ELECTRON_RENDERER_URL])
@@ -37,9 +37,9 @@ function createWindow(): void {
 
 app.on(APP_EVENT.BROWSER_WINDOW_CREATED, handleBrowserWindowCreated)
 
-app.on(APP_EVENT.ACTIVATE, handleActivate.bind(null, createWindow))
+app.on(APP_EVENT.ACTIVATE, handleActivate.bind(undefined, createWindow))
 
-app.on(APP_EVENT.WINDOW_ALL_CLOSED, handleWindowAllClosed.bind(null, app))
+app.on(APP_EVENT.WINDOW_ALL_CLOSED, handleWindowAllClosed.bind(undefined, app))
 
 app.whenReady().then(() => {
   electronApp.setAppUserModelId(APP_USER_MODEL_ID)

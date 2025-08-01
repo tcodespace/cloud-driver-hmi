@@ -9,9 +9,9 @@ import type { ViewId } from './type'
 import { ExpandButton } from './button'
 
 const TITLE_MAP: Record<ViewId, string> = {
-  a: 'Left Window',
-  b: 'Top Right Window',
-  c: 'Bottom Right Window'
+  a: 'Window1',
+  b: 'Window2',
+  c: 'Window3'
 }
 
 export const Mosaic = memo(() => {
